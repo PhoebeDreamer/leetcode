@@ -1,5 +1,12 @@
 # phoebe leetcode
 This is my leetcode practice book.
+
+### [lc563](src/lc563.py) TODO
+
+### [lc130](src/lc130.py) TODO
+
+### [lc332](src/lc332.py) TODO
+
 ### [lc22](src/lc22.py)
 idea: backtracking，随机组合的顺序有限定
 
@@ -24,3 +31,6 @@ idea: DFS，lc200相似解法，将目标坐标周围值全部替换为target，
 ### [lc93](src/lc93.py) 
 idea: Backtracking，限定条件为长度，大小，字符串(>1)开头不可为0
 总结：如果用数组，则要append，pop；如果用string，直接在helper函数里partial+new
+
+### [lc103](src/lc103.py)
+idea:
