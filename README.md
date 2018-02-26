@@ -1,6 +1,5 @@
 # phoebe leetcode
 This is my leetcode practice book.
-
 ### [lc563](src/lc563.py) TODO
 
 ### [lc130](src/lc130.py) TODO
@@ -33,4 +32,24 @@ idea: Backtracking，限定条件为长度，大小，字符串(>1)开头不可�
 总结：如果用数组，则要append，pop；如果用string，直接在helper函数里partial+new
 
 ### [lc103](src/lc103.py)
-idea:
+idea: BFS，deque, 把所有的放入list里面，但是需要加入level变量，倒叙偶数行
+
+### [lc404](src/lc404.py)
+idea: BFS，deque, 找到最左边的叶子的和
+
+### [lc389](src/lc389.py)
+idea: HashTable, 哈希表
+
+### [lc771](src/lc771.py)
+idea: Hash Table
+
+### [lc215](src/lc215.py)
+idea: Divide and Conquer, 分治法, 复杂的地方在于怎么处理重复的情况，因此不仅要有left，right，还要有equal
+
+### [lc77](src/lc77.py)
+idea: Backtracking/combinations
+* itertools自带combinations功能(combinations(list, k)),顺序无关
+* permutations，顺序相关
+* combinations_with_replacement，和combinationsl类似，但它生成的组合包含自身元素
+
+
