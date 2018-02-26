@@ -1,5 +1,12 @@
 # phoebe leetcode
 This is my leetcode practice book.
+
+### [lc438](src/lc438.py) TODO
+
+### [lc437](src/lc437.py) TODO
+
+### [lc377](src/lc377.py) TODO
+
 ### [lc563](src/lc563.py) TODO
 
 ### [lc130](src/lc130.py) TODO
@@ -52,4 +59,50 @@ idea: Backtracking/combinations
 * permutations，顺序相关
 * combinations_with_replacement，和combinationsl类似，但它生成的组合包含自身元素
 
+### [lc46](src/lc46.py)
+idea: Backtracking/Permutations
 
+### [lc216](src/lc216.py)
+idea: Backtracking
+* trick1: k与n的个数存在一定的关系，求和公式，可以由此判断是否存在答案
+* trick2：在helper中判断是否可以放入ans中时，加上一个return，可以减少运行时间
+
+### [lc40](src/lc40.py)
+idea: Backtracking，回溯，在数组中找到加和为target的组合，可以重复
+
+### [lc39](src/lc39.py)
+idea: Backtracking, 回溯
+
+### [lc124](src/lc124.py) Important!!!
+idea: DFS
+* 如果是判断path，则需要比较left+right+root.val和max
+* 但是此时的left，right都需要和0比较一下，存在传上来的值<0的情况
+* 如果要往上传，则left，right只能选一个，需要比较left，right 
+
+### [lc606](src/lc606.py)
+idea: String，Tree
+
+### [lc257](src/lc257.py)
+idea: Tree, DFS，Backtracking，每次有分叉，就多了一条路径，本质是回溯
+
+### [lc108](src/lc108.py)
+idea: DFS, Divide and Conquer，找到中间值做root，然后迭代，继续往下分
+
+### [lc129](src/lc129.py)
+idea: DFS, 类似lc257
+
+### [lc94](src/lc94.py)
+idea: inorder, dfs, 中序遍历，如何用iteratively实现
+
+### [lc543](src/lc543.py) important!!!
+idea: Tree, DFS, 找到最长路径，不需要穿过root，需要helper返回两个参数，一个是node左右最长的路径，一个是当前已记录的最大路径
+
+### [lc669](src/lc669.py) important!!!
+idea: DFS, Tree，node如果小于min，则返回node.right;node如果大于max，则返回node.left；同时对】node.left和node.right进行递归
+
+### [lc129](src/lc129.py)
+idea: DFS, 类似lc257
+
+### [lc547](src/lc547.py) important!!!!!!!!!
+idea: DFS, path标记，找到朋友圈个数，突破点在如果是两个独立的朋友圈a、b，则a绝不会出现在b所在的行或列上，即如果a出现在b所在行上，两者一定属于同一个朋友圈。
+* 因为一开始只关注了怎么标记原二维数组，所以越写越乱 눈_눈
