@@ -7,11 +7,18 @@ This is my leetcode practice book.
 
 ### [lc377](src/lc377.py) TODO
 
-### [lc563](src/lc563.py) TODO
-
 ### [lc130](src/lc130.py) TODO
 
 ### [lc332](src/lc332.py) TODO
+
+
+### [lc101](src/lc101.py) TODO
+idea: Tree, DFS, BFS, 判断书是否对称
+* dfs:由basic case往下推，1个node只需要判断left,right是否相同；两个node需要判断left.left与right.right，left.right与right.left;更多node的时候，最左边，最右边（依次往内）判断是否对称【边际到中央】
+* bfs：利用stack，push进去left，right，情况较为复杂
+
+### [lc226](src/lc226.py) TODO
+idea: Tree, recursion, invert Binary Tree
 
 ### [lc22](src/lc22.py)
 idea: backtracking，随机组合的顺序有限定
@@ -79,6 +86,12 @@ idea: DFS
 * 但是此时的left，right都需要和0比较一下，存在传上来的值<0的情况
 * 如果要往上传，则left，right只能选一个，需要比较left，right 
 
+### [lc543](src/lc543.py) important!!!
+idea: Tree, DFS, 找到最长路径，不需要穿过root，需要helper返回两个参数，一个是node左右最长的路径，一个是当前已记录的最大路径
+
+### [lc687](src/lc687.py)
+idea: DFS, Tree, 类似lc543，lc124.如果root.val与root.left.val相同，则left+1，否则left置为0，同理root.right。往上返回的是root的一边，left与right pk，且max要于left+right pk。
+
 ### [lc606](src/lc606.py)
 idea: String，Tree
 
@@ -92,17 +105,28 @@ idea: DFS, Divide and Conquer，找到中间值做root，然后迭代，继续�
 idea: DFS, 类似lc257
 
 ### [lc94](src/lc94.py)
-idea: inorder, dfs, 中序遍历，如何用iteratively实现
+idea: inorder, dfs, stack，中序遍历，如何用iteratively实现
 
-### [lc543](src/lc543.py) important!!!
-idea: Tree, DFS, 找到最长路径，不需要穿过root，需要helper返回两个参数，一个是node左右最长的路径，一个是当前已记录的最大路径
+### [lc98](src/lc98.py)
+idea：
+
+### [lc230](src/lc230.py)
+idea：BST, Tree, find the k smallest element in BST, 利用BST的性质，root.left<root, root.right>root.
+
+### [lc501](src/lc501.py)
+idea：Tree, dfs, stcak, 
 
 ### [lc669](src/lc669.py) important!!!
 idea: DFS, Tree，node如果小于min，则返回node.right;node如果大于max，则返回node.left；同时对】node.left和node.right进行递归
 
-### [lc129](src/lc129.py)
-idea: DFS, 类似lc257
-
 ### [lc547](src/lc547.py) important!!!!!!!!!
 idea: DFS, path标记，找到朋友圈个数，突破点在如果是两个独立的朋友圈a、b，则a绝不会出现在b所在的行或列上，即如果a出现在b所在行上，两者一定属于同一个朋友圈。
 * 因为一开始只关注了怎么标记原二维数组，所以越写越乱 눈_눈
+
+### [lc112](src/lc112.py)
+idea: DFS, Tree. 判断是否存在一条路径从root出发直到最子叶，和为target。逆向思维，往下递归时，target减去已经走过的node.val，判断当为最子叶（not root.left and not root.right)时，target是否和node.val相同。
+
+### [lc113](src/lc113.py)
+idea: DFS, Tree. Path SumII，同理lc112，只是函数多加了一个partial参数，因为要记录走过的路径。
+
+
