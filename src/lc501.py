@@ -1,12 +1,16 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-import collections as c
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
-class Solution1(object):
+# O(1) space
+
+
+******************************************
+import collections as c
+class Solution2(object):
     def findMode(self, root):
         """
         :type root: TreeNode
@@ -27,10 +31,8 @@ class Solution1(object):
         dfs(root)
         maxval = max(ans.itervalues())
         return [i for i in ans if ans[i] == maxval]
-
-
-
-class Solution2(object):
+**************************************************************
+class Solution3(object):
     def findMode(self, root):
         """
         :type root: TreeNode
