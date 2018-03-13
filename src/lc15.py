@@ -1,35 +1,33 @@
-
-nums = [1,0,0,1,0,1,-1]
-
-nums.sort()
-print(nums)
-if len(nums) < 3:
-    print(None)
-
-ans = []
-count = 0
-i = 0
-
-while i < len(nums):  
-    j=i+1  
-    while j<len(nums):
-        flag = False
-        if -(nums[i] + nums[j]) in nums[j+1:]:
-            ans.append([nums[i],nums[j],-nums[i]-nums[j]])
-            count+=1 
-
-        while j<len(nums):
-            if nums[i] == nums[j]:
-                i=j
-                j+=1
-                flag = True
-            
-            prev = nums[j]
-            if prev = nums[j]
-
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if len(nums) < 3:
+            return []
+        nums.sort()
+        ans = []
+        for i in range(len(nums)-2):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            if nums[i] + nums[i+1] + nums[i+2] > 0:
+                break
+            start, end = i+1, len(nums)-1
+            target = -nums[i]
+            while start < end: 
+                if nums[start]+nums[end] < target:
+                    start+=1
+                elif nums[start]+nums[end] > target:
+                    end-=1
+                else:
+                    ans.append([nums[i], nums[start], nums[end]])
+                    start+=1
+                    end-=1
+                    while start<end and nums[start] == nums[start-1]: 
+                        start+=1
+                    while start<end and nums[end] == nums[end+1]:
+                        end-=1
+                
+        return ans
         
-
-    i+=1
-        
-
-print(ans)

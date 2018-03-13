@@ -1,10 +1,35 @@
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 class Solution1(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        new_head = dummy = ListNode(None)
+        sum = 0
+        while l1 or l2:
+            sum //= 10
+            if l1:
+                sum+=l1.val
+                l1 = l1.next
+            if l2:
+                sum += l2.val
+                l2 = l2.next
+            dummy.next = ListNode(sum%10)
+            dummy = dummy.next
+            
+        if sum//10:
+            dummy.next = ListNode(1)
+        
+        return new_head.next
+
+class Solution2(object):
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
@@ -57,7 +82,7 @@ class Solution1(object):
         
         return tmp
             
-class Solution2(object):
+class Solution3(object):
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode

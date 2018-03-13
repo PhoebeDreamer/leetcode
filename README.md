@@ -1,26 +1,31 @@
 # phoebe leetcode
 This is my leetcode practice book.
 
+### lc[121](src/lc121.py) DP 
+
+### [lc241](src/lc241.py) TODO tut'ed
+idea: Divide and Conquer 
+
+### [lc395](src/lc395.py) 
+idea: Longest Substring with At Least K Repeating Characters， dfs, divide and conqure, 一开始想的是滑动窗口，但没有办法做出来，因为并没有固定的字符串去匹配，只有频率k。因此要找到freq<k的元素，然后以该元素为节点，divide，再分段conqure，直到找到符合要求的slice。
+
+### [lc437](src/lc437.py) TODO tutored
+idea: 
+
+### [lc377](src/lc377.py) DP
+idea: 
+
 ### [lc438](src/lc438_rick.py)
 idea: hash table, sliding-window, Counter，滑动窗口。使用Counter时的技巧是，为了避免出现超时的情况，不应该对每一个窗口进行一次Counter操作，而是处理掉上一个窗口的第一个元素，如果处理后，Counter中该元素个数为0，则del。然后窗口往后移动一步，对最新的元素进行操作。
 
-### [lc241](src/lc241.py) TODO
-idea: Divide and Conquer 
-
-### [lc437](src/lc437.py) TODO
-idea: 
-
-### [lc377](src/lc377.py) TODO
-idea: 
-
-### [lc567](src/lc567.py) TODO
+### [lc567](src/lc567.py)
 idea: 待修改， Two Pointers， Sliding window， 类似438
 
 ### [lc617](src/lc617.py)
 idea: Merge Two Binary Trees, Tree, preorder
 
-### [lc226](src/lc226.py) TODO
-idea: Tree, recursion, invert Binary Tree
+### [lc226](src/lc226.py) 
+idea: Tree, recursion, invert Binary Tree, Google homebrew
 
 ### [lc563](src/lc563.py)
 idea: Tree，累加各层的绝对差，即左边的和减掉右边的和
@@ -40,7 +45,7 @@ idea: 选课系统，Course ScheduleI，DFS, Graph，Topological Sort，建立�
 ### [lc210](src/lc210.py)
 idea: 选课系统，Course ScheduleII，DFS，Graph，Topological Sort，类似lc207
 
-### [lc630](src/lc630.py) TODO
+### [lc630](src/lc630.py) GREEDYs
 idea: 选课系统，Course ScheduleIII，greedy
 
 ### [lc332](src/lc332.py)
@@ -60,6 +65,9 @@ idea: iteratively或backtracking；迭代：创造res，循环遍；回溯，模
 
 ### [lc79](src/lc79.py) 
 idea: backtracking + DFS, 遍历二维数组并标记路轨，寻找合适的轨迹
+
+### [lc695](src/lc695.py)
+idea: Array, DFS, Max Area of Island, 类似lc200，遍历四周为1的，然后area进行pk
 
 ### [lc200](src/lc200.py) 
 idea: DFS，找到其中一个island（为1），遍历二维数组将其整个面积标记为0，然后寻找下一个island（1）（计数），最终二维数组整个为0 
@@ -84,7 +92,7 @@ idea: HashTable, 哈希表
 idea: Hash Table
 
 ### [lc215](src/lc215.py)
-idea1: Divide and Conquer, 分治法, 复杂的地方在于怎么处理重复的情况，因此不仅要有left，right，还要有equal
+idea1: Binary Search, 分治法, 复杂的地方在于怎么处理重复的情况，因此不仅要有left，right，还要有equal
 idea2: heap
 ### [lc77](src/lc77.py)
 idea: Backtracking/combinations
@@ -125,7 +133,7 @@ idea: String，Tree
 idea: Tree, DFS，Backtracking，每次有分叉，就多了一条路径，本质是回溯
 
 ### [lc108](src/lc108.py)
-idea: DFS, Divide and Conquer，找到中间值做root，然后迭代，继续往下分
+idea: DFS, Binary Search，找到中间值做root，然后迭代，继续往下分
 
 ### [lc129](src/lc129.py)
 idea: DFS, 类似lc257
@@ -133,7 +141,7 @@ idea: DFS, 类似lc257
 ### [lc94](src/lc94.py)
 idea: inorder, dfs, stack，中序遍历，如何用iteratively实现
 
-### [lc501](src/lc501.py) TODO
+### [lc501](src/lc501.py)
 idea：Tree, dfs, stcak, find the most frequent occured element in BST,
 
 ### [lc98](src/lc98.py)
@@ -185,7 +193,270 @@ idea: DFS, Tree, Balanced Binary Tree, lc104的进阶版，除了要得出每层
 ### [lc100](src/lc100.py)
 idea: DFS, Tree, Same Tree, 判断两个树是否完全一样，注意判断两个树是否状态(即空或不空)，直接用p is q
 
-### [lc101](src/lc101.py) TODO
+### [lc101](src/lc101.py) 
 idea: Tree, DFS, BFS, 判断树是否对称，lc100的进阶版
 * dfs:由basic case往下推，1个node只需要判断left,right是否相同；两个node需要判断left.left与right.right，left.right与right.left;更多node的时候，最左边，最右边（依次往内）判断是否对称【边际到中央】
 * bfs：利用stack，push进去left，right，情况较为复杂
+
+### [lc204](src/lc204.py)
+idea: Math, Hash Table, Count Primes, 质数相关的题都可以用的解法，从i*i开始走，步伐为i
+
+### [lc172](src/lc172.py)
+idea: Math, Factorial Trailing Zeros, 找到n！尾巴0的个数。只要存在5，就会有一个0，trick是怎么解决25的问题。只需要让n//=5, count+=n即可。
+
+### [lc155](src/lc155.py)
+idea: stack, design, Min Stack, 具有pop，push，pop，getMin的功能，如果要在constant time里获得，最主要的问题就是pop的时候怎么处理getMin函数会被影响。因此有两个list，stack和minstack，以及minvalue。每当push的时候，就要pk一下，如果小于当前minvalue，才会放进minstack。如果pop的时候，pop出去的数为minstack，则更新minvalue，但如果minvalue为0，就要再次置为默认值float('inf‘).
+
+### [lc581](src/lc581.py)
+idea: Array, Shortest Unsorted Continuous Subarray，找到最短需要排序的子序列，可以使原序列使ordered
+* 解法1：build一个新的ordered array，找出不一样的index
+* 解法2：找出前一段的最大值和后一段的最小值，如果当前nums[i]<max,则设为end(最后一个比当前max小的值，右边不会再有比max小的情况），如果当前nums[n-1-i]>min，则设为beg(最后一个比当前min大的值，左边不会再有比min大的情况)。即分别找到前一段和后一段，最先不符合上升规律的index。
+
+### [lc118](src/lc118.py)
+idea: Array, Pascl's Triangle
+
+### [lc38](src/lc38.py)
+idea: Count and Say, Array, 快慢指针
+
+### [lc443](src/lc443.py)
+idea: String Compression, modify in-place, String，快慢指针
+
+### [lc347](src/lc347.py)
+idea: heap, Hash Table, Counter
+
+### [lc659](src/lc659.py) TODO  buhui
+idea: 
+
+### [lc189](src/lc189.py)
+idea: Array, Rotate Array, three ways, no extra space
+* 解法1： 移位
+* 解法2： list compression
+* 解法3： 前后部分分别reverse,最后整个倒过来
+
+### [lc26](src/lc26.py) 
+idea: Array, Two pointers, 不是一个很好的题。。。
+
+### [lc645](src/lc645.py) 
+idea: Set Mismatch，Hash Table，Math
+
+### [lc217](src/lc217.py) 
+idea: Constant Duplicate，Array，Hash Table
+
+### [lc111](src/lc111.py) 
+idea: Minimum Depth of Binary Tree, BFS, Tree
+
+### [lc107](src/lc107.py) 
+idea: Binary Tree Level Order Traversal II, BFS, Tree
+
+### [lc367](src/lc367.py) 
+idea: Binary Search，Math,valid perfect square，实现sqrt
+
+### [lc69](src/lc69.py) 
+idea: Binary Search，Math，sqrt(x)
+
+### [lc441](src/lc441.py) 
+idea: Math, Binary Search, Arranging Coins
+
+### [lc374](src/lc374.py) 
+idea: Binary Search, 二分搜索，Guess Number Higher or Lower
+
+### [lc169](src/lc169.py) 
+idea: Array，Divide and Conqure，一个很厉害的算法，Majority Element(出现次数>n/2)，前提条件必须满足majority elements
+
+### [lc35](src/lc35.py) 
+idea: Array, Binary Search, Search Insert Position
+
+### [lc744](src/lc744.py) 
+idea: Binary Search, Find Smallest Letter Greater Than Target
+
+### [lc287](src/lc287.py) 
+idea: Two Pointers, Array, Binary Search, Find the Duplicate Number, 从中间开始分，冗余的一边比另一边多一些元素
+
+### [lc349](src/lc349.py) 
+idea: Set，Intersection of Two Arrays
+
+### [lc350](src/lc350.py) 
+idea: Set，Intersection of Two ArraysII, Set, Counter
+
+### lc[3](src/lc3.py)
+idea: Two pointers, String, Sliding-Window, Longest Substring Without Repeating Characters
+
+### lc[11](src/lc11.py)
+idea: Two pointers, Array, Container With Most Water, 前后夹逼，最大面积应该取决于两边的高度和距离，不停地pk
+
+### lc[42](src/lc42.py) TODO tut'ed
+idea: 
+
+### lc[725](src/lc725.py)
+idea: Linked List, 如果连接和切断linked list， Split Linked List in Parts
+
+### lc[24](src/lc24.py)
+idea: Linked List，swap nodes in pairs，每两个互换顺序，注意使用dummy，prev等
+
+### lc[206](src/lc206.py)
+idea: Linked List，Reverse Linked List, iterative and recursion
+
+### lc[25](src/lc25.py)
+idea: Reverse Nodes in k-Group, Linked List, iterative, 值得注意一点，如果dummy = prev，那么随着prev的变化，dummy的指向也就变了
+
+### lc[328](src/lc328.py)
+idea: Odd Eevn Linked List, 一个odummy，一个edummy就可以了，不要局限于非要把他们一个一个连接起来，显然不现实
+
+### lc[19](src/lc19.py)
+idea: Remove Nth Node From End of List
+* 解法1： 快慢指针，fast比slow多走了n步，等到fast走到底，slow要跳过一格
+* 解法2： dfs，递归，O(n)，更快，index
+
+### lc[21](src/lc21.py)
+idea: Merge Two sorted Lists,linked list，注意两个list可能长度不同
+
+### lc[23](src/lc23.py)
+idea: Merge k Sorted Lists，Linked List, Heap
+
+### lc[83](src/lc83.py)
+idea: Remove Duplicates from Sorted List, Linked List
+
+### lc[82](src/lc82.py)
+idea: Remove Duplicates from Sorted ListII, Linked List,直接删掉重复的elements
+
+### lc[141](src/lc141.py)
+idea: Linked List Cycle
+
+### lc[142](src/lc142.py)
+idea: Floyd’s cycle detection algorith/Tortoise and Hare Algorithm, Linked List, 如果linked list存在一个圈，那么快慢指针相遇后，从head出发的start和slow最终相遇的点，就是cycle的entry
+
+### lc[234](src/lc234.py)
+idea: Palindrome Linked List, Two pointers, 快慢指针，翻转后面的更容易
+
+### lc[203](src/lc203.py)
+idea: Remove Linked List Elements
+
+### lc[160](src/lc160.py)
+idea: Intersection of Two Linked Lists
+
+### lc[599](src/lc599.py)
+idea: Remove Linked List Elements
+
+### lc[2](src/lc2.py)
+idea: Add Two Numbers, linked list, list是倒序的，不需要inplace改变，进位判断比较简单， sum//=10
+
+### lc[445](src/lc445.py)
+idea: Add Two NumbersII，linked list, 没什么意思，可以直接求和，然后新建一个dummy
+
+### lc[86](src/lc86.py)
+idea: Partition List, linked list, 双指针
+
+### lc[92](src/lc92.py)
+idea: Reverse Linked List II
+
+### lc[697](src/lc697.py)
+idea: Array, Hash map, setdefault
+
+### lc[125](src/lc125.py)
+idea: Valid Palindrome, Two Pointers, string, isalnum
+
+### lc[680](src/lc680.py)
+idea: Valid PalindromeII, String
+
+### lc[697](src/lc697.py)
+idea: Array, Hash map, setdefault
+
+### lc[686](src/lc686.py)
+idea: Repeated String Match, a的结尾+开头一定在B中
+
+### lc[459](src/lc459.py)
+idea: Repeated Substring Pattern, string, 如果s是由重复的字符串t组成的，那么s一定在(s+s)[1:-1]。
+* 如果S由SpSp组成，则S一定在pSpSpS中
+
+### lc[1](src/lc1.py)
+idea: Two Sum, Hash Table
+
+### lc[15](src/lc1.py)
+idea: 3 Sum, Two Pointers, 对撞指针
+
+### lc[16](src/lc16.py)
+idea: 3 Sum Closest, Two Pointers, 对撞指针, 比lc15更简单一些，因为题目设定只有唯一解
+
+### lc[18](src/lc18.py)
+idea: 4 Sum, Two Pointers, Hash Table，对撞指针, 模板
+
+### lc[537](src/lc537.py)
+idea: Complex Number Multiplication, 复数，python可以unzip返回
+
+### lc[647](src/lc647.py)
+idea: Palindromic Substrings, String, Dynamic Programming, 奇偶两种回文的可能性
+
+### lc[383](src/lc383.py)
+idea: string, counter
+
+### lc[345](src/lc345.py)
+idea: Reverse Vowels of a String, Two pointers
+
+### lc[202](src/lc202.py)
+idea: Happy Number, 如果是happy number，每个digit的平方的和加起来，组成一个新的数，循环，最后结果为1。
+
+### lc[66](src/lc66.py)
+idea: Plus One, Math, 先转成int，再用map换成list
+
+### lc[657](src/lc657.py)
+idea: Judge Route Circle, stirng, count
+
+### lc[561](src/lc561.py)
+idea: Array, Array Partition I
+
+### lc[728](src/lc728.py)
+idea: Math, self dividing numbers, 返回True如果能被n中的每一个digit整除，但是不能包括0
+
+### lc[14](src/lc14.py)
+idea: String, Longest Common Prefix
+
+### lc[27](src/lc27.py)
+idea: Remove Element, Two Pointers, 前后指针
+
+### lc[13](src/lc13.py)
+idea：Roman to Integer, Math, String
+
+### lc[7](src/lc7.py)
+idea: Reverse Integer, Math
+
+### lc[9](src/lc9.py)
+idea: Palindrome Number, 同理lc7
+
+### lc[353](src/lc353.py)
+idea: design snake game, queue, 把snake走过的痕迹放入一个deque里，头和尾巴是一起动的，直接snake.pop()就把尾巴更新了，新的头需要判断是否在boudary里或者touch到了body 
+
+### lc[588](src/lc588.py)
+idea: Design In-Memory File System,  dic里存储的是path，不可以用file，因为file的名字可能重复；如果一个文件里有content，再ls时，返回的就是该文件夹的名称，而不是空
+
+### lc[394](src/lc394.py)
+idea: Decode String, dfs, stack, 将s = "3[a]2[bc]" 展开为 "aaabcbc".
+* 解法1：dfs，新建一个可以返回index的函数，如果isdigit()，就先展开[]里面的，递归下去
+* 解法2：stack，s的顺序是digit+【+characters+】或者直接characters。所以，按照这个顺序去依次放入stack里面，再取出来。
+
+### lc[48](src/lc48.py)
+idea: Rotate the image/2D matrix by 90 degrees (clockwise)
+ * 解法: first reverse up to down, then swap the symmetry 
+
+### lc[238](src/lc238.py)
+idea: Array，Product of Array Except Self, 一个left，1->len-1,递乘，一个right，len-2->0出发，left，right错位，最后left*right得出的就是product
+ 
+### lc[692](src/lc692.py)
+idea: heap, Top K Frequent Words, 用counter.most_common()时，不可以限制前k位，因为会有重复次数出现，题目限制答案必须是按照alphabetical顺序
+
+### lc[451](src/lc451.py)
+idea: heap, counter, Sort Characters By Frequency, 思路和lc692相同
+
+### lc[454](src/lc454.py)
+idea: 4 SUM II，hash table, 艺术级别的空间换时间，O(n^3)+O(n)space换成O(n^2)+O(n^2)space
+
+### lc[378](src/lc378.py)
+idea: Kth Smallest Element in a Sorted Matrix, heap
+
+### lc[](src/lc.py)
+
+### lc[](src/lc.py)
+
+### lc[](src/lc.py)
+ 
+ 
+
