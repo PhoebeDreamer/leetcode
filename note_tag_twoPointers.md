@@ -6,8 +6,11 @@
         2. 3Sum [lc15](src/lc15.py)
             + 转换为2sum，对撞指针
         3. 4Sum [lc18](src/lc18.py)
+            * 典型空间换时间例子
         4. kSum
         5. 3Sum Closest：[lc16](src/lc16.py)
+    * 思考：
+        * 在4Sum那个题中，如果直接用模板，时间是O(N^K-1)，为了平衡时间，我们可以考虑转变为2sum和2sum的问题，用空间来换时间
     * 模板
     ```python
     def findNsum(num, N, target, partial, result):
@@ -30,7 +33,11 @@
                     findNsum(nums[i+1:], N-1, target-nums[i], partial+[nums[i]], result )
     ```
 * sliding-Window, 前后指针
-    * 实例：[lc438](src/lc438_rick.py)， lc[3](src/lc3.py)
+    * 实例：
+        1. [lc438](src/lc438_rick.py)， 
+        2. lc[3](src/lc3.py)
+        3. Minimum Size Subarray Sum： lc[209](src/lc209.py)
+            * 值得思考别人的思路，有的时候判断的方式不必那么保守，也可以倒着
 
 * 对撞指针，两端夹击
     * 实例：

@@ -1,8 +1,6 @@
 # phoebe leetcode
 This is my leetcode practice book.
 
-### lc[121](src/lc121.py) DP 
-
 ### [lc241](src/lc241.py) TODO tut'ed
 idea: Divide and Conquer 
 
@@ -452,11 +450,153 @@ idea: 4 SUM II，hash table, 艺术级别的空间换时间，O(n^3)+O(n)space�
 ### lc[378](src/lc378.py)
 idea: Kth Smallest Element in a Sorted Matrix, heap
 
+### lc[74](src/lc74.py)
+idea: Search a 2D Matrix, 不要用递归，很麻烦，因为一找到target就要返回True. 二维数组查找target，就老老实实的从边界出发，如果非要用二分法，可能会倒回来，死循环的情况。
+
+### lc[240](src/lc240.py)
+idea: Search a 2D Matrix II，有技巧，从右上角出发，则左边的一排比当前位置小，正下方一排比当前位置大。
+
+### lc[75](src/lc75.py)
+idea: sort colors
+* two pass: count colow, and overwrite
+* one pass: 夹逼指针
+    * red--|--white--| index->unsort---|blue--
+    * if nums[index]==0, red_end+=1, swap(nums[red_end], nums[index]), index+=1
+    * if nums[index]==2, blue-=1, swap(nums[blue],nums[index])
+    * else: index+=1
+* one pass：bucket sort
+
+### lc[49](src/lc49.py)
+idea: Group Anagrams, Hash Table, String, dict不可以当做字典的key
+
+### lc[33](src/lc33.py)
+idea: Search in rotated sorted array, binary search
+* 解法1：
+    Explanation:
+
+        Let’s say nums looks like this: [12, 13, 14, 15, 16, 17, 18, 19, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+        Because it’s not fully sorted, we can’t do normal binary search. But here comes the trick:
+
+        If target is let’s say 14, then we adjust nums to this, where “inf” means infinity:
+        [12, 13, 14, 15, 16, 17, 18, 19, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf]
+
+        If target is let’s say 7, then we adjust nums to this:
+        [-inf, -inf, -inf, -inf, -inf, -inf, -inf, -inf, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+    And then we can simply do ordinary binary search.
+* 解法2： 找到最小值的index，然后再二分搜索
+
+### lc[34](src/lc34.py)
+idea: Search for a Range, binary search
+ 
+### lc[56](src/lc56.py)
+idea: Array, sort, merge intervals, 把一组没有排序的可能有重合区域的区间合并，考虑各种情况
+
+### lc[84](src/lc84.py) TO REVIEW
+idea: [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/discuss/28900/O(n)-stack-based-JAVA-solution)，, stack，创造一个递增的stack来解决O(n^2)或O(2^n)，把他变成一个O(n)的问题
+* 基本思路是每当递增趋势被打破，就结算最高点后方的面积
+
+### lc[654](src/lc654.py) TO REVIEW
+idea: Maximum Binary Tree, Stack
+* 解法1：recursion, 递归，divide and conqure
+* 解法2： decreasing stack，还没看懂
+
+### [lc146](src/lc146.py) TO REVIEW
+idea: LRU Cache, design, orderdict, double linked-list, hash
+
+### [lc460](src/lc460.py) TO REVIEW
+idea: LFU Cache, design, orderdict, double linked-list, hash
+
+### lc[4](src/lc4.py) TO REVIEW
+idea: Median of Two Sorted Arrays, Binary Search, 限制条件O(log (m+n))时间，转换为找Kth number
+* 比较A的k/2位置与B的k/2位置大小，如果A[k/2]>B[k/2],则扔掉B中的前k/2个数，然后从k/2+1开始继续找
+
+### lc[53](src/lc53.py) 
+idea：Maximum subarray,DP，Array
+* 求两个变量的搭配最优
+```
+ for 其中一个数
+     让另外一个数最优
+```
+* prefix sum: sum(i~j) = sum(j)-sum(i-1)
+
+### lc[44](src/lc44.py)
+idea: Minimum subarray，把数都* -1，求Maximum subarray 
+
+### lt[42](src/lt42.py) TO REVIEW
+idea: Maximum subarrayII, DP, Array 
+* 从左向右走一遍，从右向左走一遍,最后left[i]+right[i+1]
+
+### lc[121](src/lc121.py) DP 
+idea：best time to buy and sell stock, lc53的变形, array, DP
+
+### lc[152](src/lc152.py) TO REVIEW
+idea: Maximum Product Subarray, DP, Array，两个变量max，min，如果n为复数，max，min就换一下，值得思考！！！
+
+### lc[713](src/lc713.py) TO REVIEW
+idea: Subarray Product Less Than K, Array, Two pointers
+
+### lc[209](src/lc209.py)
+idea: 滑动窗口，Array，two pointers，Minimum Size Subarray Sum。有更好的解法，值得思考。
+
+### lc[105](src/lc105.py) TO REVIEW
+idea: Construct Binary Tree from Preorder and Inorder Traversal, 找到preorder和inorder之间的关系
+
+### lc[560](src/lc560.py)
+idea: Subarray Sum Equals K
+
+### lc[131](src/lc131.py)
+idea: Palindrome Partitioning, backtracking
+
+### lc[572](src/lc572.py)
+idea: dfs, Subtree of Another Tree
+
+### lc[36](src/lc36.py) TO REVIEW
+idea: hash table, set, Valid Sudoku, 特别值得看！！！
+
+### lc[37](src/lc37.py) TODO
+
+### lc[227](src/lc227.py) TO REVIEW
+idea: Basic Calculator II, stack
+
+### lc[31](src/lc31.py) TO REVIEW
+idea: array, Next Permutation
+* 6 5 4 8 7 5 1 => 6 5 5 1 4 7 8
+* first, find the last ascending index
+* then, swap nums[index-1] with the the smallest num in nums[index:] bigger than nums[index-1]
+* then sort nums[index:] in ascending order
+
+### lc[128](src/lc128.py)
+idea: Longest Consecutive Sequence, Array, Union find, O(n) space
+
+### lc[55](src/lc55.py) TO REVIEW
+idea: Jump Game, Array, Greedy
+* 解法1：找每个点能走的最大distance，然后在range(i, i+nums[i]+1)中找其中有没有点能走到len(nums)-1
+* 解法2: 从后面开始走，看能不能走到0
+* 执着的卡在了不知道如果一个数为0，怎么往下走的情况，毕竟最大可以走到i+nums[i]，但是也可以走一步或者两部，于是回溯产生了很多重复情况。事实上，缩小for的右端就解决了这个问题。因为下一步只能从<=i+nums[i]范围内选择
+
+### lc[334](src/lc334.py) TO REVIEW
+idea: Increasing Triplet Subsequence, stack
+* 我用了stack，但是事实上有更聪明的方法，嗯嗯！！！
+
+### lc[179](src/lc179.py) TO REVIEW
+idea: Largest Number, scan, 非常tricky的关于怎么判断两个数的大小
+
+### lc[150](src/lc150.py) TO REVIEW
+idea: Evaluate Reverse Polish Notation, stack, 计算器同类题
+
+### lc[54](src/lc54.py)
+idea: Spiral Matrix, Array, 判断条件，如何简写代码
+
+### lc[](src/lc.py)
+
 ### lc[](src/lc.py)
 
 ### lc[](src/lc.py)
 
 ### lc[](src/lc.py)
- 
- 
+
+### lc[](src/lc.py)
+
 
